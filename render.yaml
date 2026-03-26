@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: job-finder-backend
+    runtime: docker
+    plan: standard
+    healthCheckPath: /
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        scope: build,runtime
+      - key: SPRING_DATASOURCE_USERNAME
+        scope: build,runtime
+      - key: SPRING_DATASOURCE_PASSWORD
+        scope: build,runtime
+      - key: JWT_SECRET
+        scope: build,runtime
+      - key: PORT
+        value: "8080"
